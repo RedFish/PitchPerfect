@@ -16,6 +16,7 @@
 		D44C18851AFABDE500EABA51 /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C18841AFABDE500EABA51 /* Pitch_PerfectTests.swift */; };
 		D44C18911AFC084B00EABA51 /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D44C18901AFC084B00EABA51 /* movie_quote.mp3 */; };
 		D44C18931AFC09EB00EABA51 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C18921AFC09EB00EABA51 /* AVFoundation.framework */; };
+		D4E855791AFD7C3F0085B762 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E855781AFD7C3F0085B762 /* RecordedAudio.swift */; };
 		D4FC15221AFC17D6002E3F61 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FC15211AFC17D6002E3F61 /* PlaySoundsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		D44C18841AFABDE500EABA51 /* Pitch_PerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectTests.swift; sourceTree = "<group>"; };
 		D44C18901AFC084B00EABA51 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
 		D44C18921AFC09EB00EABA51 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D4E855781AFD7C3F0085B762 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		D4FC15211AFC17D6002E3F61 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				D44C18771AFABDE500EABA51 /* LaunchScreen.xib */,
 				D44C186D1AFABDE500EABA51 /* Pitch_Perfect.xcdatamodeld */,
 				D44C18691AFABDE400EABA51 /* Supporting Files */,
+				D4E855781AFD7C3F0085B762 /* RecordedAudio.swift */,
 			);
 			path = "Pitch Perfect";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				D44C186F1AFABDE500EABA51 /* Pitch_Perfect.xcdatamodeld in Sources */,
 				D4FC15221AFC17D6002E3F61 /* PlaySoundsViewController.swift in Sources */,
 				D44C186C1AFABDE400EABA51 /* AppDelegate.swift in Sources */,
+				D4E855791AFD7C3F0085B762 /* RecordedAudio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

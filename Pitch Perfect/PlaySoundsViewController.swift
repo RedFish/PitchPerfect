@@ -9,16 +9,19 @@
 import UIKit
 import AVFoundation
 
-class PlaySoundsViewController: UIViewController {
+class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
+	
+	@IBOutlet weak var stopButton: UIButton!
 	
 	var audioPlayer:AVAudioPlayer!
-	@IBOutlet weak var stopButton: UIButton!
+	var receivedAudio:RecordedAudio!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		if var filePath = NSBundle.mainBundle().URLForResource("movie_quote", withExtension: "mp3"){
+		if var filePath = receivedAudio.filePathUrl /* NSBundle.mainBundle().URLForResource("movie_quote", withExtension: "mp3")*/ {
 			audioPlayer = AVAudioPlayer(contentsOfURL: filePath, error: nil)
 			audioPlayer.enableRate = true
+			audioPlayer.delegate = self
 		}
 		else{
 			println("Error filePath")
@@ -53,6 +56,10 @@ class PlaySoundsViewController: UIViewController {
 	@IBAction func stopAction(sender: UIButton) {
 		audioPlayer.stop()
 		audioPlayer.currentTime = 0.0
+		stopButton.hidden = true
+	}
+	
+	func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
 		stopButton.hidden = true
 	}
 	/*
