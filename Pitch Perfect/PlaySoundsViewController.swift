@@ -15,6 +15,8 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
 	
 	var audioPlayer:AVAudioPlayer!
 	var receivedAudio:RecordedAudio!
+	var audioEngine:AVAudioEngine!
+	var audioFile:AVAudioFile!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -22,6 +24,8 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
 			audioPlayer = AVAudioPlayer(contentsOfURL: filePath, error: nil)
 			audioPlayer.enableRate = true
 			audioPlayer.delegate = self
+			audioEngine = AVAudioEngine()
+			audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
 		}
 		else{
 			println("Error filePath")
@@ -53,6 +57,10 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
 		stopButton.hidden = false
 	}
 	
+	@IBAction func playChipmunkAction(sender: UIButton) {
+		playAudioWithVariablePitch(1000)
+	}
+	
 	@IBAction func stopAction(sender: UIButton) {
 		audioPlayer.stop()
 		audioPlayer.currentTime = 0.0
@@ -62,14 +70,26 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
 	func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
 		stopButton.hidden = true
 	}
-	/*
-	// MARK: - Navigation
 	
-	// In a storyboard-based application, you will often want to do a little preparation before navigation
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-	// Get the new view controller using segue.destinationViewController.
-	// Pass the selected object to the new view controller.
+	func playAudioWithVariablePitch(pitch: Float){
+		audioPlayer.stop()
+		audioEngine.stop()
+		audioEngine.reset()
+		
+		var pitchPlayerNode = AVAudioPlayerNode()
+		audioEngine.attachNode(pitchPlayerNode)
+
+		var timePitch = AVAudioUnitTimePitch()
+		timePitch.pitch = pitch
+		audioEngine.attachNode(timePitch)
+		
+		audioEngine.connect(pitchPlayerNode, to: timePitch, format: nil)
+		audioEngine.connect(timePitch, to: audioEngine.outputNode, format: nil)
+		
+		pitchPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+		audioEngine.startAndReturnError(nil)
+		
+		pitchPlayerNode.play()
+		stopButton.hidden = false
 	}
-	*/
-	
 }
