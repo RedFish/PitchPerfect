@@ -54,10 +54,21 @@
                                     <action selector="playChipmunkAction:" destination="PgV-Eh-YcY" eventType="touchUpInside" id="hTN-Rx-e5v"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgk-cL-xK5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="darthvader">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playDarthVadorAction:" destination="PgV-Eh-YcY" eventType="touchUpInside" id="qIt-od-gwv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="kgk-cL-xK5" secondAttribute="trailing" constant="50" id="1SM-26-HAb"/>
                             <constraint firstItem="hhy-vO-kZq" firstAttribute="top" secondItem="XH4-SP-rl3" secondAttribute="bottom" constant="50" id="2bE-ER-PWX"/>
+                            <constraint firstItem="kgk-cL-xK5" firstAttribute="top" secondItem="tlu-qY-CC9" secondAttribute="bottom" constant="50" id="Ass-8h-Igw"/>
                             <constraint firstItem="tlu-qY-CC9" firstAttribute="top" secondItem="z0c-Ab-GmZ" secondAttribute="bottom" constant="70" id="E1M-h0-MTa"/>
                             <constraint firstItem="hhy-vO-kZq" firstAttribute="leading" secondItem="Lo6-Ma-BQA" secondAttribute="leadingMargin" constant="50" id="FQk-xt-HBf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tlu-qY-CC9" secondAttribute="trailing" constant="50" id="Yzi-au-mtV"/>
@@ -72,6 +83,7 @@
                                 <exclude reference="tlu-qY-CC9"/>
                                 <exclude reference="wJo-iq-Fat"/>
                                 <exclude reference="hhy-vO-kZq"/>
+                                <exclude reference="kgk-cL-xK5"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="aaF-ET-lOC"/>
@@ -80,6 +92,8 @@
                                 <exclude reference="Yzi-au-mtV"/>
                                 <exclude reference="2bE-ER-PWX"/>
                                 <exclude reference="FQk-xt-HBf"/>
+                                <exclude reference="1SM-26-HAb"/>
+                                <exclude reference="Ass-8h-Igw"/>
                                 <exclude reference="s4D-8R-Adv"/>
                                 <exclude reference="nJ0-yJ-Sqk"/>
                             </mask>
@@ -90,6 +104,7 @@
                                 <include reference="tlu-qY-CC9"/>
                                 <include reference="wJo-iq-Fat"/>
                                 <include reference="hhy-vO-kZq"/>
+                                <include reference="kgk-cL-xK5"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="aaF-ET-lOC"/>
@@ -98,6 +113,8 @@
                                 <include reference="Yzi-au-mtV"/>
                                 <include reference="2bE-ER-PWX"/>
                                 <include reference="FQk-xt-HBf"/>
+                                <include reference="1SM-26-HAb"/>
+                                <include reference="Ass-8h-Igw"/>
                                 <include reference="s4D-8R-Adv"/>
                                 <include reference="nJ0-yJ-Sqk"/>
                             </mask>
@@ -219,6 +236,7 @@
     </scenes>
     <resources>
         <image name="chipmunk" width="100" height="100"/>
+        <image name="darthvader" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>

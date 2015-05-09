@@ -61,6 +61,10 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
 		playAudioWithVariablePitch(1000)
 	}
 	
+	@IBAction func playDarthVadorAction(sender: UIButton) {
+		playAudioWithVariablePitch(-1000)
+	}
+	
 	@IBAction func stopAction(sender: UIButton) {
 		audioPlayer.stop()
 		audioPlayer.currentTime = 0.0
@@ -90,6 +94,5 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
 		audioEngine.startAndReturnError(nil)
 		
 		pitchPlayerNode.play()
-		stopButton.hidden = false
 	}
 }
